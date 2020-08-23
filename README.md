@@ -11,5 +11,7 @@ If someone hacks the database the files are encrypted, they can not be opened. <
 
 ![md/3](md/3.png) <br> <br> <br>
 
+The file is available for download only once, then deleted auto </br>
+
 ![md/4](md/4.png) <br> <br> <br>
 
