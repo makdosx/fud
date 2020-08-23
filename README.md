@@ -15,3 +15,7 @@ The files are not stored at all on the server but on base at server in a blob ta
 The file is decrypted during download. </br>
 If someone hacks the database the files are encrypted, they can not be opened. </br>
 
+![md/6](md/6.png) <br> <br> <br>
+
+![md/7](md/7.png) <br> <br> <br>
+
