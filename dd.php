@@ -51,6 +51,7 @@ error_reporting(0);
        $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
        $code = $_POST['code'];
+	   
    
         $sql= " SELECT name, type, size, data FROM fud_uploads WHERE code ='$code' and flag < '1'";
         $result = $conn->query($sql);
@@ -58,14 +59,18 @@ error_reporting(0);
         if($result) 
          {
                 $row = $result->fetch_assoc();
+				
+				$data = $row['data'];
+				
+				$file = substr($data, (strpos($data, '=') ?: -1) + 1);
              
-                header("Content-Type: ". $row['type']);
+			    header("Content-Type: ". $row['type']);
                 header("Content-Length: ". $row['size']);
                 header('Content-Disposition:attachment;filename="' .$row['name'] .'"');  
-				
-               echo $row['data'];
-			   
-				
+  			
+               echo $file;
+			 
+
 			$sql2= "DELETE FROM fud_uploads WHERE code ='$code'";
             $result2 = $conn->query($sql2);
   
@@ -83,6 +88,10 @@ error_reporting(0);
             {
               echo 'Error: File not find.';
             }
+			
+			
+
+				
   
 	} // end else of connect
 

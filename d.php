@@ -87,7 +87,10 @@ border-radius: 40%;
 
 
      <div class="col-md-6 offset-md-3 mt-5">
-                <h1 align="center"> <font color="white"> FUD </font> </h1>
+	 
+          <h1 align="center"> 
+		   <a href="/" style="text-decoration:none; color:white"> FUD </a> 
+		  </h1>
 
           <img src='img/bg1.gif' height="300px" width="100%"> 
         

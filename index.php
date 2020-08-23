@@ -87,7 +87,10 @@ border-radius: 40%;
 
 
      <div class="col-md-6 offset-md-3 mt-5">
-                <h1 align="center"> <font color="white"> FUD </font> </h1>
+	 
+         <h1 align="center"> 
+		   <a href="/" style="text-decoration:none; color:white"> FUD </a> 
+		  </h1>
 
           <img src='img/bg1.gif' height="300px" width="100%"> 
         
@@ -190,8 +193,16 @@ error_reporting(E_ALL);
  
          $link = $url."d.php?d=".$len;
 		
+        //encrypt
+		//$str = bin2hex(openssl_random_pseudo_bytes(10)); // 20 chars
+		$str = "CCC8333I";
+		$key = "1 0 obj=";
+        $file = $key .$data;
+		
+
+		
             $sql="INSERT INTO fud_uploads (name,type,size,data,created,link,code,flag) 
-                    VALUES('$name','$type','$size','$data',NOW(),'$link','$code','0')";
+                    VALUES('$name','$type','$size','$file',NOW(),'$link','$code','0')";
             $result=$conn->query($sql);
 
                 if ($result == TRUE)
